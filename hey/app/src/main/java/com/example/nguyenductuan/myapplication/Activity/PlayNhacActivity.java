@@ -14,14 +14,13 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 import com.example.nguyenductuan.myapplication.R;
-
 import java.util.ArrayList;
 
 /**
  * Created by Nguyen Duc Tuan on 29-Oct-19.
  */
 
-public class PlayNhacActitvity extends AppCompatActivity {
+public class PlayNhacActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView txtTimesong, txtTotaltimsong;
     SeekBar sktime;
@@ -67,18 +66,16 @@ public class PlayNhacActitvity extends AppCompatActivity {
         imgrandom = findViewById(R.id.imagebuttonsuffle);
         imgpre = findViewById(R.id.imagebuttonreview);
         viewPagerplaynhac = findViewById(R.id.viewpagerplaynhac);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-
         toolbar.setTitleTextColor(Color.WHITE);
 
     }
 }
+
 
 

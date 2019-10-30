@@ -1,5 +1,7 @@
 package com.example.nguyenductuan.myapplication.Service;
 
+import android.util.Log;
+
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 
 import java.util.List;
@@ -12,6 +14,6 @@ import retrofit2.http.GET;
  */
 
 public interface Dataservice {
-    @GET ("baihatuathich.php")
+    @GET ("baihat.php")
     Call<List<Baihat>> GetBaiHatHot();
 }

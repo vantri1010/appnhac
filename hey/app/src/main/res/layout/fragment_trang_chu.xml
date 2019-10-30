@@ -10,12 +10,7 @@
        android:layout_height="wrap_content"
        android:id="@+id/linearlayout">
       <fragment
-          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Tim_Kiem"
-          android:id="@+id/fragmentbanner"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"/>
-      <fragment
-          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Bai_Hat_Hot"
+          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Danh_Sach_Bai_Hat"
           android:id="@+id/fragmentbaihathot"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>

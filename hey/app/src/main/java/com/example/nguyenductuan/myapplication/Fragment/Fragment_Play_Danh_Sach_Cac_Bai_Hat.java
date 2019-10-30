@@ -1,6 +1,5 @@
 package com.example.nguyenductuan.myapplication.Fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.nguyenductuan.myapplication.Activity.PlayNhacActitvity;
+import com.example.nguyenductuan.myapplication.Activity.PlayNhacActivity;
 import com.example.nguyenductuan.myapplication.Adapter.PlaynhacAdapter;
 import com.example.nguyenductuan.myapplication.R;
 
@@ -30,9 +29,9 @@ public class Fragment_Play_Danh_Sach_Cac_Bai_Hat extends android.support.v4.app.
         view = inflater.inflate(R.layout.fragment_play_danh_sach_cac_bai_hat,container,false);
         recyclerViewplaynhac = view.findViewById(R.id.recyclerviewPlaybaihat);
 
-        if(PlayNhacActitvity.mangbaihat.size()>0)
+        if(PlayNhacActivity.mangbaihat.size()>0)
         {
-            playnhacAdapter = new PlaynhacAdapter(getActivity(),PlayNhacActitvity.mangbaihat);
+            playnhacAdapter = new PlaynhacAdapter(getActivity(),PlayNhacActivity.mangbaihat);
             recyclerViewplaynhac.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerViewplaynhac.setAdapter(playnhacAdapter);
         }

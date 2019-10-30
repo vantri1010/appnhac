@@ -1,12 +1,9 @@
 package com.example.nguyenductuan.myapplication.Adapter;
+
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import com.example.nguyenductuan.myapplication.Fragment.Fragment_Bai_Hat_Hot;
-import com.example.nguyenductuan.myapplication.Fragment.Fragment_Tim_Kiem;
-
 import java.util.ArrayList;
 
 /**
