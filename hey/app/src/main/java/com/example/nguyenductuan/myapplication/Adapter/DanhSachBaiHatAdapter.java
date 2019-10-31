@@ -3,6 +3,7 @@ package com.example.nguyenductuan.myapplication.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.ImageViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +35,7 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.dong_bai_hat_hot,parent,false);
+        View view = inflater.inflate(R.layout.dong_bai_hat,parent,false);
         return new ViewHolder(view);
     }
 
@@ -43,7 +44,8 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
         Baihat baihat = baihatArrayList.get(position);
         holder.txtcasi.setText(baihat.getCasi());
         holder.txtten.setText(baihat.getTenbaihat());
-        Picasso.with(context).load(baihat.getHinhbaihat()).into(holder.imghinh);
+        String URL = baihat.getHinhbaihat();
+        Picasso.with(context).load(URL).placeholder(R.drawable.varioustic).into(holder.imghinh);
     }
 
     @Override
@@ -57,15 +59,15 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
         ImageView imghinh, imgluotthich;
         public ViewHolder(View itemView) {
             super(itemView);
-            txtten = itemView.findViewById(R.id.textviewtenbaihathot);
-            txtcasi  = itemView.findViewById(R.id.textviewcasibaihathot);
-            imghinh = itemView.findViewById(R.id.imageviewbaihathot);
+            txtten = itemView.findViewById(R.id.textviewtenbaihat);
+            txtcasi  = itemView.findViewById(R.id.textviewcasibaihat);
+            imghinh = itemView.findViewById(R.id.imagebaihat);
             imgluotthich = itemView.findViewById(R.id.imageviewluotlich);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, PlayNhacActivity.class);
-                    intent.putExtra("cacbaihat", baihatArrayList);
+                    intent.putExtra("cakhuc", baihatArrayList.get(getPosition()));
                     context.startActivity(intent);
                 }
             });
