@@ -41,7 +41,7 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
     private void GetData()
     {
         Dataservice dataservice = APIService.getService();
-        Call<List<Baihat>> callback = dataservice.GetBaiHatHot();
+        Call<List<Baihat>> callback = dataservice.GetBaiHat();
         callback.enqueue(new Callback<List<Baihat>>() {
             @Override
             public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {

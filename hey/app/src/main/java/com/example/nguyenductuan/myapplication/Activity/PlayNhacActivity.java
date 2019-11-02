@@ -66,6 +66,8 @@ public class PlayNhacActivity extends AppCompatActivity {
         imgrandom = findViewById(R.id.imagebuttonsuffle);
         imgpre = findViewById(R.id.imagebuttonreview);
         viewPagerplaynhac = findViewById(R.id.viewpagerplaynhac);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +75,6 @@ public class PlayNhacActivity extends AppCompatActivity {
             }
         });
         toolbar.setTitleTextColor(Color.WHITE);
-
     }
 }
 
