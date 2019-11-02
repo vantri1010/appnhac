@@ -27,14 +27,14 @@ import retrofit2.Response;
 
 public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment {
     View view;
-    RecyclerView recyclerViewbaihathot;
-    DanhSachBaiHatAdapter baihathotAdapter;
+    RecyclerView recyclerViewbaihat;
+    DanhSachBaiHatAdapter baihatAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_danh_sach_bai_hat,container,false);
-        recyclerViewbaihathot = view.findViewById(R.id.recyclerviewbaihathot);
+        recyclerViewbaihat = view.findViewById(R.id.recyclerviewbaihat);
         GetData();
         return view;
     }
@@ -46,11 +46,11 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
             @Override
             public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {
                 ArrayList<Baihat>baihatArrayList=(ArrayList<Baihat>) response.body();
-                baihathotAdapter = new DanhSachBaiHatAdapter(getActivity(),baihatArrayList);
+                baihatAdapter = new DanhSachBaiHatAdapter(getActivity(),baihatArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager((getActivity()));
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                recyclerViewbaihathot.setLayoutManager(linearLayoutManager);
-                recyclerViewbaihathot.setAdapter(baihathotAdapter);
+                recyclerViewbaihat.setLayoutManager(linearLayoutManager);
+                recyclerViewbaihat.setAdapter(baihatAdapter);
 
             }
 
