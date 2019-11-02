@@ -1,7 +1,5 @@
 package com.example.nguyenductuan.myapplication.Service;
 
-import android.util.Log;
-
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 
 import java.util.List;

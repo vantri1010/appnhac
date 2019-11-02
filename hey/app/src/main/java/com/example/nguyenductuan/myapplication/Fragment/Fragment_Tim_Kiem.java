@@ -64,8 +64,7 @@ public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
             @Override
             public boolean onQueryTextSubmit(String query) {
                 SearchTuKhoaBaiHat(query);
-                Log.d("query", query);
-                return false;
+                return true;
             }
 
             @Override
@@ -78,12 +77,11 @@ public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
     private void SearchTuKhoaBaiHat(String query){
         Dataservice dataservice = APIService.getService();
         Call<List<Baihat>> callback = dataservice.GetSearchBaiHat(query);
-        Log.d("query", query);
         callback.enqueue(new Callback<List<Baihat>>() {
             @Override
             public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {
                 ArrayList<Baihat> mangbaihat = (ArrayList<Baihat>) response.body();
-                Log.d("aaaaaaaa", "Successed");
+                Log.d("Query", "Successed");
                 if (mangbaihat.size() > 0)
                 {
                     searchBaiHatAdapter = new SearchBaiHatAdapter(getActivity(), mangbaihat);
@@ -101,7 +99,8 @@ public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
 
             @Override
             public void onFailure(Call<List<Baihat>> call, Throwable t) {
-                Log.d("Query", "onFailure: Unsuccessed");
+                Log.d("Query", "onFailure: " + t.toString());
+                Log.d("Query", "onFailure: " + call.isExecuted());
             }
         });
     }
