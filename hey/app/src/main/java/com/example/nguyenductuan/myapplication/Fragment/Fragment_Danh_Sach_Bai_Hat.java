@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nguyenductuan.myapplication.Activity.PlayNhacActivity;
 import com.example.nguyenductuan.myapplication.Adapter.DanhSachBaiHatAdapter;
+import com.example.nguyenductuan.myapplication.Adapter.PlaynhacAdapter;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 import com.example.nguyenductuan.myapplication.R;
 import com.example.nguyenductuan.myapplication.Service.APIService;
@@ -30,11 +32,24 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
     RecyclerView recyclerViewbaihat;
     DanhSachBaiHatAdapter baihatAdapter;
 
+    //thiếu
+    RecyclerView RecyclerViewplaynhac;
+    PlaynhacAdapter playnhacAdapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_danh_sach_bai_hat,container,false);
         recyclerViewbaihat = view.findViewById(R.id.recyclerviewbaihat);
+
+        //thiếu
+        RecyclerViewplaynhac = view.findViewById(R.id.recyclerviewPlaybaihat);
+        if (PlayNhacActivity.mangbaihat.size() > 0){
+            playnhacAdapter = new PlaynhacAdapter(getActivity(), PlayNhacActivity.mangbaihat);
+            RecyclerViewplaynhac.setLayoutManager(new LinearLayoutManager(getActivity()));
+            RecyclerViewplaynhac.setAdapter(playnhacAdapter);
+        }
+
         GetData();
         return view;
     }
