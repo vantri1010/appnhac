@@ -33,7 +33,28 @@ public class Fragment_Dia_Nhac extends Fragment {
         return view;
 
     }
+//    public void PlayNhac(String hinhanh) {
+//        Picasso.with(getContext()).load(hinhanh).into(circleImageView);
+//    }
+
+//    public void PlayNhac(String hinhanh) {
+//        Picasso.get().load(hinhanh).into(circleImageView);
+//    }
+//
+
+//    public void Playnhac(final String hinhanh) {
+//        Handler handler=new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Picasso.get().load(hinhanh).into(circleImageView);
+//            }
+//        },300);
+//    }
+
+
+
     public void PlayNhac(String hinhanh) {
-        Picasso.with(getContext()).load(hinhanh).into(circleImageView);
+        Picasso.with(getActivity()).load(hinhanh).into(circleImageView);
     }
 }

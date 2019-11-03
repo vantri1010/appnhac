@@ -153,7 +153,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String baihat) {
             super.onPostExecute(baihat);
-            mediaPlayer = new MediaPlayer();
+            //mediaPlayer = new MediaPlayer();
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
