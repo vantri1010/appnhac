@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,7 @@ public class PlaynhacAdapter extends RecyclerView.Adapter<PlaynhacAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
          Baihat baihat = mangbaihat.get(position);
          holder.txtcasi.setText(baihat.getCasi());
-         holder.txtindex.setText(position + 1 +"");
+         holder.txtindex.setText(position + 1);
          holder.txttenbaihat.setText(baihat.getTenbaihat());
     }
 

@@ -32,7 +32,6 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
     RecyclerView recyclerViewbaihat;
     DanhSachBaiHatAdapter baihatAdapter;
 
-    //thiếu
     RecyclerView RecyclerViewplaynhac;
     PlaynhacAdapter playnhacAdapter;
 
@@ -42,7 +41,6 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
         view = inflater.inflate(R.layout.fragment_danh_sach_bai_hat,container,false);
         recyclerViewbaihat = view.findViewById(R.id.recyclerviewbaihat);
 
-        //thiếu
         RecyclerViewplaynhac = view.findViewById(R.id.recyclerviewPlaybaihat);
         if (PlayNhacActivity.mangbaihat.size() > 0){
             playnhacAdapter = new PlaynhacAdapter(getActivity(), PlayNhacActivity.mangbaihat);
@@ -60,13 +58,12 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
         callback.enqueue(new Callback<List<Baihat>>() {
             @Override
             public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {
-                ArrayList<Baihat>baihatArrayList=(ArrayList<Baihat>) response.body();
+                ArrayList<Baihat> baihatArrayList=(ArrayList<Baihat>) response.body();
                 baihatAdapter = new DanhSachBaiHatAdapter(getActivity(),baihatArrayList);
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager((getActivity()));
                 linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 recyclerViewbaihat.setLayoutManager(linearLayoutManager);
                 recyclerViewbaihat.setAdapter(baihatAdapter);
-
             }
 
             @Override
@@ -75,24 +72,4 @@ public class Fragment_Danh_Sach_Bai_Hat extends android.support.v4.app.Fragment 
             }
         });
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
