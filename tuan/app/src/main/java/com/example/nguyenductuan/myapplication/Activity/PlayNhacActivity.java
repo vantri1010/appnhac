@@ -59,8 +59,6 @@ public class PlayNhacActivity extends AppCompatActivity {
         GetDataFromIntent();
         init();
         eventClick();
-        
-
     }
 
     private void eventClick() {
@@ -120,10 +118,10 @@ public class PlayNhacActivity extends AppCompatActivity {
                         imgrandom.setImageResource(R.drawable.iconshuffled);
                         imgrepeat.setImageResource(R.drawable.iconrepeat);
                     }
-                    imgrepeat.setImageResource(R.drawable.iconshuffled);
+                    imgrandom.setImageResource(R.drawable.iconshuffled);
                     checkrandom = true;
                 }else{
-                    imgrepeat.setImageResource(R.drawable.iconsuffle);
+                    imgrandom.setImageResource(R.drawable.iconsuffle);
                     checkrandom = false;
                 }
             }
@@ -131,7 +129,6 @@ public class PlayNhacActivity extends AppCompatActivity {
         sktime.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mediaPlayer.seekTo(seekBar.getProgress());
             }
 
             @Override
@@ -141,7 +138,7 @@ public class PlayNhacActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                mediaPlayer.seekTo(seekBar.getProgress());
             }
         });
         imgnext.setOnClickListener(new View.OnClickListener() {
@@ -184,7 +181,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                         new PlayMp3().execute(mangbaihat.get(position).getLinkbaihat());
                         fragment_dia_nhac.PlayNhac(mangbaihat.get(position).getHinhbaihat());
                         getSupportActionBar().setTitle(mangbaihat.get(position).getTenbaihat());
-                        //UpdateTime();
+                        UpdateTime();
                     }
                 }
                 imgrepeat.setClickable(false);
@@ -237,7 +234,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                             new PlayMp3().execute(mangbaihat.get(position).getLinkbaihat());
                             fragment_dia_nhac.PlayNhac(mangbaihat.get(position).getHinhbaihat());
                             getSupportActionBar().setTitle(mangbaihat.get(position).getTenbaihat());
-                            //UpdateTime();
+                            UpdateTime();
                         }
                     }
                     imgrepeat.setClickable(false);
@@ -295,7 +292,7 @@ public class PlayNhacActivity extends AppCompatActivity {
                 mangbaihat.clear();
             }
         });
-//        toolbarplaynhac.setTitleTextColor(Color.WHITE);
+        toolbarplaynhac.setTitleTextColor(Color.WHITE);
 
         fragment_dia_nhac = new Fragment_Dia_Nhac();
         fragment_play_danh_sach_cac_bai_hat = new Fragment_Play_Danh_Sach_Cac_Bai_Hat();
@@ -309,6 +306,7 @@ public class PlayNhacActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(mangbaihat.get(0).getTenbaihat());
             new PlayMp3().execute(mangbaihat.get(0).getLinkbaihat());
             imgplay.setImageResource(R.drawable.iconpause);
+
         }
     }
 
@@ -339,7 +337,7 @@ public class PlayNhacActivity extends AppCompatActivity {
             }
             mediaPlayer.start();
             TimeSong();
-            /* UpdateTime(); */
+            UpdateTime();
         }
     }
 
@@ -348,12 +346,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         txtTotaltimsong.setText(simpleDateFormat.format(mediaPlayer.getDuration()));
         sktime.setMax(mediaPlayer.getDuration());
     }
-//    private void UdateTime()
-//    {
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss");
-//        txtTotaltimsong.setText(simpleDateFormat.format(mediaPlayer.getDuration()));
-//        sktime.setMax(mediaPlayer.getDuration());
-//    }
+
     private  void UpdateTime()
     {
         final Handler handler = new Handler();
@@ -416,20 +409,19 @@ public class PlayNhacActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle(mangbaihat.get(position).getTenbaihat());
                     }
 
-                imgrepeat.setClickable(false);
-                imgnext.setClickable(false);
-                Handler handler1 = new Handler();
-                handler1.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        imgrepeat.setClickable(true);
-                        imgnext.setClickable(true);
-                    }
-                },5000);
-                next = false;
-                handler1.removeCallbacks(this);
-                }else
-                {
+                    imgrepeat.setClickable(false);
+                    imgnext.setClickable(false);
+                    Handler handler1 = new Handler();
+                    handler1.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            imgrepeat.setClickable(true);
+                            imgnext.setClickable(true);
+                        }
+                    },5000);
+                    next = false;
+                    handler1.removeCallbacks(this);
+                } else {
                     handler1.postDelayed(this,1000);
                 }
             }
