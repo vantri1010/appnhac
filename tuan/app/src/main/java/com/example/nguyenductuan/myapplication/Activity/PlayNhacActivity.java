@@ -20,7 +20,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.nguyenductuan.myapplication.Fragment.Fragment_Dia_Nhac;
 import com.example.nguyenductuan.myapplication.Fragment.Fragment_Play_Danh_Sach_Cac_Bai_Hat;
-import com.example.nguyenductuan.myapplication.Adapter.ViewPagerPlaylistnhac;
+import com.example.nguyenductuan.myapplication.Fragment.ViewPagerPlaylistnhac;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 import com.example.nguyenductuan.myapplication.R;
 

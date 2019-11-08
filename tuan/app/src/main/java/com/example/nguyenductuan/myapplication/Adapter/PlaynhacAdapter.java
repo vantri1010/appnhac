@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class PlaynhacAdapter extends RecyclerView.Adapter<PlaynhacAdapter.ViewHolder>{
     Context context;
-    ArrayList<Baihat> mangbaihat = new ArrayList<Baihat>();
+    ArrayList<Baihat> mangbaihat =new ArrayList<>();
 
     public PlaynhacAdapter(FragmentActivity activity, ArrayList<Baihat> mangbaihat) {
     }

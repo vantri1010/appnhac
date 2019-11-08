@@ -1,4 +1,4 @@
-package com.example.nguyenductuan.myapplication.Adapter;
+package com.example.nguyenductuan.myapplication.Fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class ViewPagerPlaylistnhac extends FragmentPagerAdapter {
     public final ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
-
     public ViewPagerPlaylistnhac(FragmentManager fm) {
         super(fm);
     }
@@ -20,10 +19,8 @@ public class ViewPagerPlaylistnhac extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-
         return fragmentArrayList.size();
     }
-
     public void AddFragment(Fragment fragment){
         fragmentArrayList.add(fragment);
     }
