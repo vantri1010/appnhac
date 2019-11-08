@@ -80,10 +80,12 @@ public class PlayNhacActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(mediaPlayer.isPlaying()){
+                    fragment_dia_nhac.Pause();
                     mediaPlayer.pause();
                     imgplay.setImageResource(R.drawable.iconplay);
                 }else{
                     mediaPlayer.start();
+                    fragment_dia_nhac.Play();
                     imgplay.setImageResource(R.drawable.iconpause);
                 }
             }
@@ -301,6 +303,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         adapternhac.AddFragment(fragment_dia_nhac);
         viewPagerplaynhac.setAdapter(adapternhac);
 
+        fragment_play_danh_sach_cac_bai_hat = (Fragment_Play_Danh_Sach_Cac_Bai_Hat) adapternhac.getItem(0);
         fragment_dia_nhac = (Fragment_Dia_Nhac) adapternhac.getItem(1);
         if(mangbaihat.size()>0){
             getSupportActionBar().setTitle(mangbaihat.get(0).getTenbaihat());

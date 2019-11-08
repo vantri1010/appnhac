@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -81,7 +80,6 @@ public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
             @Override
             public void onResponse(Call<List<Baihat>> call, Response<List<Baihat>> response) {
                 ArrayList<Baihat> mangbaihat = (ArrayList<Baihat>) response.body();
-                Log.d("Query", "Successed");
                 if (mangbaihat.size() > 0)
                 {
                     searchBaiHatAdapter = new SearchBaiHatAdapter(getActivity(), mangbaihat);
@@ -99,8 +97,6 @@ public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
 
             @Override
             public void onFailure(Call<List<Baihat>> call, Throwable t) {
-                Log.d("Query", "onFailure: " + t.toString());
-                Log.d("Query", "onFailure: " + call.isExecuted());
             }
         });
     }

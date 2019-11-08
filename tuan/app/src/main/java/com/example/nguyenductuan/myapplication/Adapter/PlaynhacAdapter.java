@@ -2,7 +2,6 @@ package com.example.nguyenductuan.myapplication.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +19,11 @@ import java.util.ArrayList;
 
 public class PlaynhacAdapter extends RecyclerView.Adapter<PlaynhacAdapter.ViewHolder>{
     Context context;
-    ArrayList<Baihat> mangbaihat =new ArrayList<>();
+    ArrayList<Baihat> mangbaihat;
 
-    public PlaynhacAdapter(FragmentActivity activity, ArrayList<Baihat> mangbaihat) {
+    public PlaynhacAdapter(Context context, ArrayList<Baihat> mangbaihat) {
+        this.context = context;
+        this.mangbaihat = mangbaihat;
     }
 
     @NonNull
@@ -57,6 +58,6 @@ public class PlaynhacAdapter extends RecyclerView.Adapter<PlaynhacAdapter.ViewHo
            txttenbaihat= itemView.findViewById(R.id.textviewplaynhactenbaihat);
 
        }
-   }
+    }
 
 }
