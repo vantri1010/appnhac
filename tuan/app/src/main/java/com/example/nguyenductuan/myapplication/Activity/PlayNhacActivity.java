@@ -61,6 +61,22 @@ public class PlayNhacActivity extends AppCompatActivity {
         eventClick();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mediaPlayer.pause();
+        imgplay.setImageResource(R.drawable.iconpause);
+        fragment_dia_nhac.Pause();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mediaPlayer.start();
+        imgplay.setImageResource(R.drawable.iconplay);
+        fragment_dia_nhac.Play();
+    }
+
     private void eventClick() {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -291,6 +307,8 @@ public class PlayNhacActivity extends AppCompatActivity {
             public void onClick(View view) {
                 finish();
                 mediaPlayer.stop();
+                mediaPlayer.release();
+                mediaPlayer = null;
                 mangbaihat.clear();
             }
         });
@@ -309,7 +327,6 @@ public class PlayNhacActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(mangbaihat.get(0).getTenbaihat());
             new PlayMp3().execute(mangbaihat.get(0).getLinkbaihat());
             imgplay.setImageResource(R.drawable.iconpause);
-
         }
     }
 
