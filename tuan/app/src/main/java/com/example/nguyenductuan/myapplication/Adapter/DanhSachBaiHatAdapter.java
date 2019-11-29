@@ -53,7 +53,7 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView txtten, txtcasi;
+        TextView txtten, txtcasi,txtindex;
         ImageView imghinh, imgluotthich;
         public ViewHolder(View itemView) {
             super(itemView);

@@ -1,5 +1,6 @@
 package com.example.nguyenductuan.myapplication.Service;
 
+import com.example.nguyenductuan.myapplication.Model.Album;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 
 import java.util.List;
@@ -21,4 +22,12 @@ public interface Dataservice {
     @FormUrlEncoded
     @POST("timkiembaihat.php")
     Call<List<Baihat>> GetSearchBaiHat(@Field("tukhoa") String tukhoa);
+    @GET ("album.php")
+    Call<List<Album>> GetAlbum();
+    @GET("allalbum.php")
+    Call<List<Album>> GetAllalbum();
+
+    @FormUrlEncoded
+    @POST("baihat.php")
+    Call<List<Baihat>> GetDanhsachbaihattheoalbum(@Field("idalbum") String idalbum);
 }
