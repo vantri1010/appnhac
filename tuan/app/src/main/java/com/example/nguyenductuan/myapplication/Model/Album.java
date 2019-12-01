@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Album implements Serializable {
-
+    //chỗ này phải là i thường
     @SerializedName("idAlbum")
     @Expose
     private String idAlbum;

@@ -62,6 +62,7 @@ public class AllAlbumAdapter extends  RecyclerView.Adapter<AllAlbumAdapter.ViewH
                     context.startActivity(intent);
                 }
             });
+
         }
     }
 

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.StrictMode;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -50,6 +51,10 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danhsachbaihat);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         DataIntent();
         anhxa();
         init();
@@ -105,7 +110,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Baihat>> call, Throwable t) {
-
+                Log.d("FFFF","lỗi không get đc list baihat theo album");
             }
         });
 
