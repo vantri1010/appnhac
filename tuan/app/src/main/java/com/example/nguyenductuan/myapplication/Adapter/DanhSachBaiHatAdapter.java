@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.example.nguyenductuan.myapplication.Activity.PlayNhacActivity;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 import com.example.nguyenductuan.myapplication.R;
-import com.example.nguyenductuan.myapplication.Service.APIRetrofitClient;
 import com.example.nguyenductuan.myapplication.Service.APIService;
 import com.example.nguyenductuan.myapplication.Service.Dataservice;
 import com.squareup.picasso.Picasso;
@@ -61,7 +60,7 @@ public class DanhSachBaiHatAdapter extends RecyclerView.Adapter<DanhSachBaiHatAd
 
     public class ViewHolder extends RecyclerView.ViewHolder
     {
-        TextView txtten, txtcasi,txtindex;
+        TextView txtten, txtcasi;
         ImageView imghinh, imgluotthich;
         public ViewHolder(View itemView) {
             super(itemView);

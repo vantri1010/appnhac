@@ -64,18 +64,13 @@ public class PlayNhacActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        mediaPlayer.pause();
-        imgplay.setImageResource(R.drawable.iconpause);
-        fragment_dia_nhac.Pause();
+        if(mediaPlayer!=null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+            imgplay.setImageResource(R.drawable.iconplay);
+            fragment_dia_nhac.Pause();
+        }
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        mediaPlayer.start();
-        imgplay.setImageResource(R.drawable.iconplay);
-        fragment_dia_nhac.Play();
-    }
 
     private void eventClick() {
         final Handler handler = new Handler();
