@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Baihat implements Parcelable {
 
-    @SerializedName("idbaihat")
+    @SerializedName("Idbaihat")
     @Expose
     private String idbaihat;
 
@@ -54,12 +54,12 @@ public class Baihat implements Parcelable {
     };
 
     public String getIdbaihat() {
-return idbaihat;
-}
+        return this.idbaihat;
+    }
 
     public void setIdbaihat(String idbaihat) {
-this.idbaihat = idbaihat;
-}
+        this.idbaihat = idbaihat;
+    }
 
     public String getTenbaihat() {
 return tenbaihat;
