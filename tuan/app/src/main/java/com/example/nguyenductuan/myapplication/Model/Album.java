@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public class Album implements Serializable {
 
-    @SerializedName("IdAlbum")
+    @SerializedName("idAlbum")
     @Expose
     private String idAlbum;
     @SerializedName("TenAlbum")

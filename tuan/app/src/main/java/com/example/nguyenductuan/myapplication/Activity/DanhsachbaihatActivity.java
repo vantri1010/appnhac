@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -53,8 +54,8 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
         anhxa();
         init();
         if(album != null && !album.getTenAlbum().equals("")){
-            setValueInView(album.getTenAlbum(),album.getHinhAlbum());
             GetDataAlbum(album.getIdAlbum());
+            setValueInView(album.getTenAlbum(),album.getHinhAlbum());
         }
     }
 
@@ -97,6 +98,9 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
                 danhSachBaiHatAdapterForAlbum = new DanhSachBaiHatAdapterForAlbum(DanhsachbaihatActivity.this,mangbaihat);
                 recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
                 recyclerViewdanhsachbaihat.setAdapter(danhSachBaiHatAdapterForAlbum);
+
+                Log.d("HHHH",mangbaihat.get(0).getHinhbaihat());
+                Log.d("HHHH",mangbaihat.get(0).getTenbaihat());
             }
 
             @Override
