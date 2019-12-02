@@ -1,12 +1,12 @@
 package com.example.nguyenductuan.myapplication.Activity;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
 
 import com.example.nguyenductuan.myapplication.Adapter.AllAlbumAdapter;
@@ -17,8 +17,6 @@ import com.example.nguyenductuan.myapplication.Service.Dataservice;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.zip.GZIPInputStream;
 
 import retrofit2.Call;
 import retrofit2.Callback;

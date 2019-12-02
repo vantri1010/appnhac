@@ -1,12 +1,13 @@
 package com.example.nguyenductuan.myapplication.Fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,7 +34,7 @@ import retrofit2.Response;
  * Created by Nguyen Duc Tuan on 13-Oct-19.
  */
 
-public class Fragment_Tim_Kiem extends android.support.v4.app.Fragment{
+public class Fragment_Tim_Kiem extends Fragment {
     View view;
     Toolbar toolbar;
     RecyclerView recyclerViewSearchbaihat;
