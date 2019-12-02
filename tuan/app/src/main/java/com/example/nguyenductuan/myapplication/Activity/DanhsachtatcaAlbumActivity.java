@@ -59,6 +59,7 @@ public class DanhsachtatcaAlbumActivity extends AppCompatActivity {
         toolbarAlbum = findViewById(R.id.toolbarAllalbum);
         setSupportActionBar(toolbarAlbum);
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Tất Cả Album");
         toolbarAlbum.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
