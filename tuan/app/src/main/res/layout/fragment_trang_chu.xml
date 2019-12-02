@@ -10,15 +10,22 @@
        android:layout_height="wrap_content"
        android:id="@+id/linearlayout">
       <fragment
+          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Album"
+          android:id="@+id/fragmentalbum"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+
+      <fragment
+          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Video"
+          android:id="@+id/fragmentvideo"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+
+      <fragment
           android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Danh_Sach_Bai_Hat"
           android:id="@+id/fragmentbaihathot"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"/>
 
-      <fragment
-          android:name="com.example.nguyenductuan.myapplication.Fragment.Fragment_Album"
-          android:id="@+id/fragmentalbum"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"/>
    </LinearLayout>
 </ScrollView>

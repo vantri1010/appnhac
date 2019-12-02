@@ -104,8 +104,7 @@ public class DanhsachbaihatActivity extends AppCompatActivity {
                 recyclerViewdanhsachbaihat.setLayoutManager(new LinearLayoutManager(DanhsachbaihatActivity.this));
                 recyclerViewdanhsachbaihat.setAdapter(danhSachBaiHatAdapterForAlbum);
 
-                Log.d("HHHH",mangbaihat.get(0).getHinhbaihat());
-                Log.d("HHHH",mangbaihat.get(0).getTenbaihat());
+                Log.d("HHHH",mangbaihat.toString());
             }
 
             @Override

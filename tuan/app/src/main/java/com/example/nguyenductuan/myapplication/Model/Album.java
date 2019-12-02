@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public class Album implements Serializable {
     //chỗ này phải là i thường
-    @SerializedName("idAlbum")
+    @SerializedName("IdAlbum")
     @Expose
     private String idAlbum;
     @SerializedName("TenAlbum")
