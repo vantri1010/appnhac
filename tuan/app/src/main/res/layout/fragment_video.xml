@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <androidx.viewpager.widget.ViewPager
-            android:background="@color/cardview_light_background"
+            android:background="@color/design_default_color_primary_dark"
             android:id="@+id/viewpagervideo"
             android:layout_width="match_parent"
             android:layout_height="180dp">

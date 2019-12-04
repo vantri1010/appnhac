@@ -50,6 +50,15 @@ public class VideoAdapter extends PagerAdapter {
         Picasso.with(context).load(videoArrayList.get(position).getHinhVideo()).into(imgvideo);
         txttitlevideo.setText(videoArrayList.get(position).getTenVideo());
         txtnoidungvideo.setText(videoArrayList.get(position).getCasiVideo());
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        container.addView(view);
         return view;
     }
 
