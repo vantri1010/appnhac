@@ -2,6 +2,8 @@ package com.example.nguyenductuan.myapplication.Adapter;
 
 import android.content.Context;
 import androidx.annotation.NonNull;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.nguyenductuan.myapplication.Activity.PlayVideoActivity;
 import com.example.nguyenductuan.myapplication.Model.Video;
 import com.example.nguyenductuan.myapplication.R;
 import com.squareup.picasso.Picasso;
@@ -37,7 +40,7 @@ public class VideoAdapter extends PagerAdapter {
 
     @NonNull
     @Override
-    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.dong_video,null);
 
@@ -54,7 +57,9 @@ public class VideoAdapter extends PagerAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(context, PlayVideoActivity.class);
+                intent.putExtra("video",videoArrayList.get(position));
+                context.startActivity(intent);
             }
         });
 
