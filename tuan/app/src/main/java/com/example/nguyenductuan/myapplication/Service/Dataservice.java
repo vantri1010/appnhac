@@ -32,7 +32,7 @@ public interface Dataservice {
 
     @FormUrlEncoded
     @POST("getalbumtheoid.php")
-    Call<List<Baihat>> GetDanhsachbaihattheoalbum(@Field("idalbum") String idalbum);
+    Call<List<Baihat>> GetDanhsachbaihattheoalbum(@Field("idAlbum") String idalbum);
 
     @FormUrlEncoded
     @POST("updateluotthich.php")
