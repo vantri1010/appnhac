@@ -4,6 +4,8 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nguyenductuan.myapplication.Activity.PlayNhacActivity;
 import com.example.nguyenductuan.myapplication.Model.Baihat;
 import com.example.nguyenductuan.myapplication.R;
 import com.example.nguyenductuan.myapplication.Service.APIService;
@@ -65,14 +68,14 @@ public class DanhSachBaiHatAdapterForAlbum extends RecyclerView.Adapter<DanhSach
             imghinh = itemView.findViewById(R.id.imageviewbaihat);
             imgluotthich = itemView.findViewById(R.id.imageviewluotthichdanhsachbaihat);
 
-//            itemView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Intent intent = new Intent(context, PlayNhacActivity.class);
-//                    intent.putExtra("cacbaihat", mangbaihat);
-//                    context.startActivity(intent);
-//                }
-//            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, PlayNhacActivity.class);
+                    intent.putExtra("cacbaihat", mangbaihat);
+                    context.startActivity(intent);
+                }
+            });
             imgluotthich.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
